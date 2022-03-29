@@ -46,7 +46,7 @@ const jobs = useJobsStore();
         </button>
       </div>
     </Transition>
-    <JobListTransition tag="ul" class="mt-14 space-y-8">
+    <JobListTransition tag="ul" class="mt-14 space-y-10 lg:space-y-8">
       <li v-for="job in jobs.getJobs()" :key="job.id">
         <JobCard :job="job" />
       </li>

@@ -19,7 +19,7 @@ const jobs = useJobsStore();
       />
       <div class="flex flex-col gap-2">
         <div class="flex items-center gap-4">
-          <h3 class="text-sm font-bold text-primary-cyan">{{ job.company }}</h3>
+          <h3 class="text-[13px] font-bold text-primary-cyan">{{ job.company }}</h3>
           <div class="flex items-center gap-2">
             <span
               v-if="job.new"

@@ -8,7 +8,7 @@ const jobs = useJobsStore();
 
 <template>
   <article
-    class="lg:border-l-6 relative flex w-full flex-col gap-4 rounded border-l-4 bg-white px-6 pt-8 pb-6 lg:static lg:flex-row lg:justify-between"
+    class="relative flex w-full flex-col gap-4 rounded border-l-4 bg-white px-6 pt-8 pb-6 lg:static lg:flex-row lg:justify-between lg:border-l-[6px]"
     :class="{ 'border-primary-cyan': job.featured, 'border-white': !job.featured }"
   >
     <div class="flex gap-8">
@@ -33,7 +33,11 @@ const jobs = useJobsStore();
             >
           </div>
         </div>
-        <h2 class="font-bold text-neutral-darkcyan">{{ job.position }}</h2>
+        <h2
+          class="cursor-pointer font-bold text-neutral-darkcyan transition-colors hover:text-primary-cyan"
+        >
+          {{ job.position }}
+        </h2>
         <ul class="flex list-disc items-center gap-6 text-sm text-neutral-cyan">
           <li class="list-none">{{ job.postedAt }}</li>
           <li>{{ job.contract }}</li>
@@ -46,7 +50,7 @@ const jobs = useJobsStore();
       <li
         v-for="tag in [job.role, job.level, ...job.languages, ...job.tools]"
         :key="tag"
-        class="cursor-pointer rounded bg-neutral-lightcyan px-2 py-1 text-sm font-bold text-primary-cyan"
+        class="cursor-pointer rounded bg-neutral-lightcyan px-2 py-1 text-sm font-bold text-primary-cyan transition-colors hover:bg-primary-cyan hover:text-white"
         @click="jobs.addFilter(tag)"
       >
         {{ tag }}

@@ -8,7 +8,7 @@ const jobs = useJobsStore();
 
 <template>
   <article
-    class="relative flex w-full flex-col gap-4 rounded border-l-4 bg-white px-6 pt-8 pb-6 lg:static lg:flex-row lg:justify-between lg:border-l-[6px]"
+    class="relative flex w-full flex-col gap-4 rounded-md border-l-4 bg-white px-6 pt-8 pb-6 shadow-2xl shadow-primary-cyan/40 lg:static lg:flex-row lg:justify-between lg:border-l-[5px]"
     :class="{ 'border-primary-cyan': job.featured, 'border-white': !job.featured }"
   >
     <div class="flex gap-8">
@@ -28,7 +28,7 @@ const jobs = useJobsStore();
             >
             <span
               v-if="job.featured"
-              class="flex items-center rounded-full bg-black py-1 px-2 text-[10px] font-bold uppercase text-white"
+              class="flex items-center rounded-full bg-neutral-darkcyan py-1 px-2 text-[10px] font-bold uppercase text-white"
               >featured</span
             >
           </div>

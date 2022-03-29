@@ -32,5 +32,9 @@ export const useJobsStore = defineStore("jobs", () => {
     filters.value.splice(index, 1);
   };
 
-  return { getJobs, getFilters, hasFilters, addFilter, removeFilter };
+  const clearFilters = (): void => {
+    filters.value = [];
+  };
+
+  return { getJobs, getFilters, hasFilters, addFilter, removeFilter, clearFilters };
 });
